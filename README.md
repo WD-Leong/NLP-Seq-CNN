@@ -13,4 +13,27 @@ if sub-word tokens are used. After processing the data, run
 ```
 python reddit_jokes_seq_cnn_train.py
 ```
-to train the model. Training can be done in parallel, which is a desirable property. To perform inference, the model runs auto-regressively on the seed input, or the current output sequence. Depending on the output sequence length, the inference can take some time.
+to train the model. Training can be done in parallel, which is a desirable property. To perform inference, the model runs auto-regressively on the seed input, or the current output sequence. To perform inference, run the code
+```
+python reddit_jokes_seq_cnn_test.py
+```
+Instead of using temperature, `tf.random.categorical` function is applied on the logits directly to introduce diversity in the inferred joke. Depending on the output sequence length, the inference can take some time.
+
+## Outputs
+After training a model with 256 filters, 4 layers and 2 stacks on Reddit jokes with 30 tokens or less for 20000 iterations, some outputs are provided in this section.
+```
+Input Phrase:
+did you hear
+Generated Phrase:
+did you hear about the restaurant on the moon ? yeah , great food but no atmosphere . EOS
+
+Input Phrase:
+what is the difference
+Generated Phrase:
+what is the difference between a sharply dressed man on a unicycle and a poorly dressed man on a bicycle ?? attire EOS
+
+Input Phrase:
+why did
+Generated Phrase:
+why did the cat stop singing ? because it was out of tuna half a note . EOS
+```
