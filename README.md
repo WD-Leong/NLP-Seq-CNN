@@ -19,6 +19,11 @@ python reddit_jokes_seq_cnn_test.py
 ```
 Instead of using temperature, `tf.random.categorical` function is applied on the logits directly to introduce diversity in the inferred joke. Depending on the output sequence length, the inference can take some time.
 
+## Dilated Convolutional Networks
+Following 
+
+![WaveNet's Dilated 1D Convolutional Network](https://github.com/WD-Leong/NLP-Seq-CNN/WaveNet Dilated Convolution.jpg)
+
 ## Outputs
 After training a model with 256 filters, 4 layers and 2 stacks on Reddit jokes with 30 tokens or less for 20000 iterations, some outputs are provided in this section.
 ```
