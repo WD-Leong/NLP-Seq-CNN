@@ -13,7 +13,7 @@ if sub-word tokens are used. After processing the data, run
 ```
 python reddit_jokes_seq_cnn_train.py
 ```
-to train the model. Training can be done in parallel, which is a desirable property. To perform inference, the model runs auto-regressively on the seed input, or the current output sequence. To perform inference, run the code
+to train the model. The CNN structure allows training to be optimized on a GPU. To perform inference, the model runs auto-regressively on the seed input, or the current output sequence. To perform inference, run the code
 ```
 python reddit_jokes_seq_cnn_test.py
 ```
@@ -44,3 +44,4 @@ why did
 Generated Phrase:
 why did the cat stop singing ? because it was out of tuna half a note . EOS
 ```
+The hardware used is an Nvidia Quadro P1000 4GB Graphics Card.
