@@ -1,4 +1,4 @@
-# NLP Language Model using Dilated Causal Convolutional Networks 
+# NLP Language Modelling using Dilated Causal Convolutional Networks 
 This repository includes the codes that I explored for language modelling using a 1D Dilated Causal Convolutional Networks. It is inspired from the [WaveNet Model](https://deepmind.com/blog/article/wavenet-generative-model-raw-audio), which I modified and applied to the Language Modelling task. By applying dilated causal convolutional networks (CNN), the model increases the receptive field exponentially to allow it to model long range dependencies and sequences. The first layer has a dilation rate of 1, but subsequent layers have a dilation rate of 2. 
 
 This repository includes a code to train the data on the [Reddit Jokes](https://github.com/taivop/joke-dataset) dataset. To train the model, first process the Reddit data by running
@@ -45,3 +45,9 @@ Generated Phrase:
 why did the cat stop singing ? because it was out of tuna half a note . EOS
 ```
 Overall, it was observed that the Sequence-CNN model is able to model much longer sequences, but its performance would not be as good as the GPT model if the hidden size of both models were the same.
+
+## Extension to Sequence-to-Sequence Models
+Inspired by [Convolutional Sequence to Sequence Learning](https://arxiv.org/pdf/1705.03122.pdf) paper, a much simplified Sequence-to-Sequence CNN model is developed here. The `causal` property of the CNN is invoked only at the Decoder, but not at the Encoder. Unlike Transformers, the attention mechanism is only applied once at the final layer of the Encoder and Decoder outputs. To train the model, run
+```
+python twitter_seq2seq_cnn.py
+```
