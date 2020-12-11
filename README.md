@@ -24,6 +24,8 @@ The dilated convolutional neural network applied in the [WaveNet](https://arxiv.
 
 ![WaveNet's Dilated 1D Convolutional Network](WaveNet_Dilated_Convolution.JPG)
 
+Fig 1.: WaveNet's Dilated Convolutional Network (source: [WaveNet](https://arxiv.org/pdf/1609.03499.pdf))
+
 ## Outputs
 After training a model with 256 filters, 4 layers and 2 stacks on Reddit jokes with 30 tokens or less for 20000 iterations, some outputs are provided in this section.
 ```
