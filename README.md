@@ -17,12 +17,12 @@ to train the model. Training can be done in parallel, which is a desirable prope
 ```
 python reddit_jokes_seq_cnn_test.py
 ```
-Instead of using temperature, `tf.random.categorical` function is applied on the logits directly to introduce diversity in the inferred joke. Depending on the output sequence length, the inference can take some time.
+Instead of using temperature, `tf.random.categorical` function is applied on the logits directly to introduce diversity in the inferred joke. Depending on the output sequence length, the inference can take some time. In the processing, the score assigned to the joke is categorized into 3 classes - bad, ok and good - to study its effect on the quality of the jokes generated.
 
 ## Dilated Convolutional Networks
-Following 
+The dilated convolutional neural network applied in the [WaveNet](https://arxiv.org/pdf/1609.03499.pdf) paper allows it to cover thousands of timesteps, making it suitable to generate synthetic utterances. In this implementation, position embeddings, inspired from the [Convolutional Sequence to Sequence Learning](https://arxiv.org/pdf/1705.03122.pdf) paper, is applied to improve the model's performance. The positional embeddings are applied at two levels of granularity - at the input of each convolutional layer, as well as the input of each stack layer.
 
-![WaveNet's Dilated 1D Convolutional Network](https://github.com/WD-Leong/NLP-Seq-CNN/WaveNet Dilated Convolution.jpg)
+![WaveNet's Dilated 1D Convolutional Network](WaveNet_Dilated_Convolution.JPG)
 
 ## Outputs
 After training a model with 256 filters, 4 layers and 2 stacks on Reddit jokes with 30 tokens or less for 20000 iterations, some outputs are provided in this section.
