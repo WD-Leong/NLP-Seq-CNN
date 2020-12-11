@@ -27,7 +27,7 @@ The dilated convolutional neural network applied in the [WaveNet](https://arxiv.
 Fig 1.: WaveNet's Dilated Convolutional Network (source: [WaveNet](https://arxiv.org/pdf/1609.03499.pdf))
 
 ## Outputs
-After training a model with 256 filters, 4 layers and 2 stacks on Reddit jokes with 30 tokens or less for 20000 iterations, some outputs are provided in this section.
+A model with 256 filters, 4 layers and 2 stacks on Reddit jokes with a maximum of 30 tokens was trained on an Nvidia Quadro P1000 4GB Graphics Card for 20000 iterations. Some of the model's output are provided in this section.
 ```
 Input Phrase:
 did you hear
@@ -44,4 +44,4 @@ why did
 Generated Phrase:
 why did the cat stop singing ? because it was out of tuna half a note . EOS
 ```
-The hardware used is an Nvidia Quadro P1000 4GB Graphics Card.
+Overall, it was observed that the Sequence-CNN model is able to model much longer sequences, but its performance would not be as good as the GPT model if the hidden size of both models were the same.
