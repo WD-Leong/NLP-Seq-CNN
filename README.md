@@ -49,7 +49,7 @@ Overall, it was observed that the Sequence-CNN model is able to model much longe
 ## Extension to Sequence-to-Sequence Models
 Inspired by [Convolutional Sequence to Sequence Learning](https://arxiv.org/pdf/1705.03122.pdf) paper, a much simplified Sequence-to-Sequence CNN model is developed here. The `causal` property of the CNN is invoked only at the Decoder, but not at the Encoder. Unlike Transformers, the attention mechanism is only applied once at the final layer of the Encoder and Decoder outputs. It is conceptually simple and bears some resemblance to RNN/LSTM networks.
 
-![Sequence-to-Sequence Dilated Convolutional Architecture](Seq2Seq_CNN_Architecture.JPG)
+![Sequence-to-Sequence Dilated Convolutional Architecture](Seq2Seq_CNN_Architecture.jpg)
 
 Fig 2.: Sequence-to-Sequence Architecture using Dilated Convolutional Network (Diagram modified from [WaveNet](https://arxiv.org/pdf/1609.03499.pdf) paper)
 
