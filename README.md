@@ -47,7 +47,7 @@ why did the cat stop singing ? because it was out of tuna half a note . EOS
 Overall, it was observed that the Sequence-CNN model is able to model much longer sequences, but its performance would not be as good as the GPT model if the hidden size of both models were the same.
 
 ## Extension to Sequence-to-Sequence Models
-Inspired by [Convolutional Sequence to Sequence Learning](https://arxiv.org/pdf/1705.03122.pdf) paper, a much simplified Sequence-to-Sequence CNN model is developed here. The `causal` property of the CNN is invoked only at the Decoder, but not at the Encoder. Unlike Transformers, the attention mechanism is only applied once at the final layer of the Encoder and Decoder outputs. It is conceptually simple and bears some resemblance to RNN/LSTM networks.
+Inspired by [Convolutional Sequence to Sequence Learning](https://arxiv.org/pdf/1705.03122.pdf) paper, a much simplified Sequence-to-Sequence CNN model using dilated causal convolution is developed here. Unlike Transformers, the attention mechanism is only applied once at the final layer of the Encoder and Decoder outputs. It is conceptually simple and bears some resemblance to RNN/LSTM networks.
 
 ![Sequence-to-Sequence Dilated Convolutional Architecture](Seq2Seq_CNN_Architecture.jpg)
 
