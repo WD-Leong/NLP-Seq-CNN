@@ -22,7 +22,7 @@ Instead of using temperature, `tf.random.categorical` function is applied on the
 ## Dilated Convolutional Networks
 The dilated convolutional neural network applied in the [WaveNet](https://arxiv.org/pdf/1609.03499.pdf) paper allows it to cover thousands of timesteps, making it suitable to generate synthetic utterances. Unlike the [Convolutional Sequence to Sequence Learning](https://arxiv.org/pdf/1705.03122.pdf) paper, no position embedding is applied in this implementation.
 
-![WaveNet's Dilated 1D Convolutional Network](WaveNet_Dilated_Convolution.jpg)
+![WaveNet's Dilated 1D Convolutional Network](WaveNet_Dilated_Convolution.JPG)
 
 Fig 1: WaveNet's Dilated Convolutional Network (source: [WaveNet](https://arxiv.org/pdf/1609.03499.pdf))
 
