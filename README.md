@@ -46,7 +46,7 @@ good_joke " master yoda , are we on the right track ?" " off course , we are ." 
 ```
 Overall, it was observed that the Sequence-CNN model is able to model much longer sequences, but its performance would not be as good as the GPT model if the hidden size of both models were the same.
 
-## Sequence CNN Models with Attention
+## Dilated CNN Models with Attention
 
 An extention to the Sequence CNN model is explored to incorporate attention. In this case, it is first observed that the different layers correspond to sequence outputs whose receptive fields are of different lengths. Hence, inspired by the [Compressive Transformer](https://arxiv.org/abs/1911.05507), the attention mechanism is done across the outputs of the different stacks/layers, allowing the model to combine outputs across different receptive fields. As the total number of stacks/layers is generally much lower than the sequence length, this operation is gentler on the hardware memory while maintaining an acceptable degree of performance.
 
@@ -67,7 +67,7 @@ Inspired by [Convolutional Sequence to Sequence Learning](https://arxiv.org/pdf/
 
 Fig 2.: Sequence-to-Sequence Architecture using Dilated Convolutional Network (Diagram modified from [WaveNet](https://arxiv.org/pdf/1609.03499.pdf) paper)
 
-The Sequence-to-Sequence Dilated Convolutional Network is applied on the movie dialogue dataset. To process the data, run
+The Sequence-to-Sequence Dilated Convolutional Network is applied on the [movie dialogue dataset](http://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html). The pre-processing of the data follow this [script](https://github.com/suriyadeepan/datasets/blob/master/seq2seq/cornell_movie_corpus/scripts/prepare_data.py) closely. First, process the data by running
 ```
 python process_movie_dialogue.py
 ```
