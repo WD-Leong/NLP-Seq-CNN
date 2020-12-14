@@ -50,11 +50,15 @@ Overall, it was observed that the Sequence-CNN model is able to model much longe
 
 An extention to the Sequence CNN model is explored to incorporate attention. In this case, it is first observed that the different layers correspond to sequence outputs whose receptive fields are of different lengths. Hence, inspired by the [Compressive Transformer](https://arxiv.org/abs/1911.05507), the attention mechanism is done across the outputs of the different stacks/layers, allowing the model to combine outputs across different lengths. As the total number of stacks/layers is generally much lower than the sequence length, this operation is gentler on the hardware memory while maintaining an acceptable degree of performance.
 
-The Sequence CNN module is stored in `tf_ver2_seq_cnn_attn.py` and run the command
+The Sequence CNN module is provided in the `tf_ver2_seq_cnn_attn.py` module. As the model parameters of Sequence CNN and Sequence CNN Attention are similar, changing the import module 
 ```
-python reddit_jokes_seq_cnn_attn_train.py
+import tf_ver2_seq_cnn as tf_model
 ```
-to train the the Sequence CNN Attention Model. As the model parameters of Sequence CNN and Sequence CNN Attention are similar, just changing the import modules would allow the `reddit_jokes_seq_cnn_test.py` inference to run using the intended model.
+to
+```
+import tf_ver2_seq_cnn_attn as tf_model
+```
+would allow the `reddit_jokes_seq_cnn_train.py` and `reddit_jokes_seq_cnn_test.py` to train and infer respectively using the intended model.
 
 ## Extension to Sequence-to-Sequence Models
 Inspired by [Convolutional Sequence to Sequence Learning](https://arxiv.org/pdf/1705.03122.pdf) paper, a much simplified Sequence-to-Sequence CNN model using dilated causal convolution is developed here. Unlike Transformers, the attention mechanism is only applied once at the final layer of the Encoder and Decoder outputs. It is conceptually simple and bears some resemblance to RNN/LSTM networks. Similar to the implementation of sequence dilated causal convolutional neural networks, no positional embedding is applied in this implementation.
