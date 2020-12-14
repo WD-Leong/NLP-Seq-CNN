@@ -24,7 +24,7 @@ The dilated convolutional neural network applied in the [WaveNet](https://arxiv.
 
 ![WaveNet's Dilated 1D Convolutional Network](WaveNet_Dilated_Convolution.JPG)
 
-Fig 1.: WaveNet's Dilated Convolutional Network (source: [WaveNet](https://arxiv.org/pdf/1609.03499.pdf))
+Fig 1: WaveNet's Dilated Convolutional Network (source: [WaveNet](https://arxiv.org/pdf/1609.03499.pdf))
 
 ## Outputs
 A model with 256 filters, 4 layers, 2 stacks and a convolution width (`kernel_size`) of 3 on Reddit jokes with a maximum of 30 word tokens was trained on an Nvidia Quadro P1000 4GB Graphics Card for 20000 iterations. Some of the model's output are provided in this section.
@@ -49,6 +49,9 @@ Overall, it was observed that the Sequence-CNN model is able to model much longe
 ## Dilated CNN Models with Attention
 
 An extention to the Sequence CNN model is explored to incorporate attention. In this case, it is first observed that the different layers correspond to sequence outputs whose receptive fields are of different lengths. Hence, inspired by the [Compressive Transformer](https://arxiv.org/abs/1911.05507), the attention mechanism is done across the outputs of the different stacks/layers, allowing the model to combine outputs across different receptive fields. As the total number of stacks/layers is generally much lower than the sequence length, this operation is gentler on the hardware memory while maintaining an acceptable degree of performance.
+
+![Dilated CNN Models with Attention](Dilated_Convolution_Attention.jpg)
+Fig. 2: Model Architecture of Dilated CNN Model with Attention Mechanism (Diagram modified from that in [WaveNet](https://arxiv.org/pdf/1609.03499.pdf) paper)
 
 The Sequence CNN module is provided in the `tf_ver2_seq_cnn_attn.py` module. As the model parameters of Sequence CNN and Sequence CNN Attention are similar, changing the import module 
 ```
@@ -83,7 +86,7 @@ Inspired by [Convolutional Sequence to Sequence Learning](https://arxiv.org/pdf/
 
 ![Sequence-to-Sequence Dilated Convolutional Architecture](Seq2Seq_CNN_Architecture.jpg)
 
-Fig 2.: Sequence-to-Sequence Architecture using Dilated Convolutional Network (Diagram modified from [WaveNet](https://arxiv.org/pdf/1609.03499.pdf) paper)
+Fig. 3: Sequence-to-Sequence Architecture using Dilated Convolutional Network (Diagram modified from [WaveNet](https://arxiv.org/pdf/1609.03499.pdf) paper)
 
 The Sequence-to-Sequence Dilated Convolutional Network is applied on the [movie dialogue dataset](http://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html). The pre-processing of the data follow this [script](https://github.com/suriyadeepan/datasets/blob/master/seq2seq/cornell_movie_corpus/scripts/prepare_data.py) closely. First, process the data by running
 ```
