@@ -50,7 +50,7 @@ Overall, it was observed that the Sequence-CNN model is able to model much longe
 
 An extention to the Sequence CNN model is explored to incorporate attention. In this case, it is first observed that the different layers correspond to sequence outputs whose receptive fields are of different lengths. Hence, inspired by the [Compressive Transformer](https://arxiv.org/abs/1911.05507), the attention mechanism is done across the outputs of the different stacks/layers, allowing the model to combine outputs across different receptive fields. As the total number of stacks/layers is generally much lower than the sequence length, this operation is gentler on the hardware memory while maintaining an acceptable degree of performance.
 
-![Dilated CNN Models with Attention](Dilated_Convolution_Attention.JPG)
+![Dilated CNN Models with Attention](Dilated_Convolution_Attention.jpg)
 Fig. 2: Model Architecture of Dilated CNN Model with Attention Mechanism (Diagram modified from that in [WaveNet](https://arxiv.org/pdf/1609.03499.pdf) paper)
 
 The Sequence CNN module is provided in the `tf_ver2_seq_cnn_attn.py` module. As the model parameters of Sequence CNN and Sequence CNN Attention are similar, changing the import module 
