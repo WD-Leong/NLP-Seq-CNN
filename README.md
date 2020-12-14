@@ -97,7 +97,7 @@ to train the model. To perform inference, run
 ```
 python dialogue_seq2seq_cnn_test.py
 ```
-with the input phrase of your choice.
+with the input phrase of your choice. In the scripts, a convolutional width (`kernel_size`) of 5 is set.
 
 Some of the Sequence-to-Sequence CNN Model is provided below:
 ```
