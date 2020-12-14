@@ -60,6 +60,24 @@ import tf_ver2_seq_cnn_attn as tf_model
 ```
 would allow the `reddit_jokes_seq_cnn_train.py` and `reddit_jokes_seq_cnn_test.py` to train and infer respectively using the intended model.
 
+Some of the Sequence CNN Attention Model outputs are provided below:
+```
+Input Phrase:
+bad_joke
+Generated Phrase:
+bad_joke what do you call a pile of kittens ? a meowntain EOS
+
+Input Phrase:
+ok_joke
+Generated Phrase:
+ok_joke a hamburger walks into a bar and orders a salad the bartender says " sorry , we don t serve food here ." EOS
+
+Input Phrase:
+good_joke
+Generated Phrase:
+good_joke what kind of pants does mario wear ? denim denim denim EOS
+```
+
 ## Extension to Sequence-to-Sequence Models
 Inspired by [Convolutional Sequence to Sequence Learning](https://arxiv.org/pdf/1705.03122.pdf) paper, a much simplified Sequence-to-Sequence CNN model using dilated causal convolution is developed here. Unlike Transformers, the attention mechanism is only applied once at the final layer of the Encoder and Decoder outputs. It is conceptually simple and bears some resemblance to RNN/LSTM networks. Similar to the implementation of sequence dilated causal convolutional neural networks, no positional embedding is applied in this implementation.
 
@@ -80,3 +98,31 @@ to train the model. To perform inference, run
 python dialogue_seq2seq_cnn_test.py
 ```
 with the input phrase of your choice.
+
+Some of the Sequence-to-Sequence CNN Model is provided below:
+```
+Input Phrase:
+good morning
+Generated Phrase:
+good morning EOS
+
+Input Phrase:
+who are you
+Generated Phrase:
+i m the one who wanted to study it EOS
+
+Input Phrase:
+where are you going
+Generated Phrase:
+i m going to california EOS
+
+Input Phrase:
+where are we going
+Generated Phrase:
+we re not going anywhere EOS
+
+Input Phrase:
+how are you
+Generated Phrase:
+i m fine EOS
+```
