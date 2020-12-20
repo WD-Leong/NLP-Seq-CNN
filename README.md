@@ -63,7 +63,7 @@ import tf_ver2_seq_cnn_attn as tf_model
 ```
 would allow the `reddit_jokes_seq_cnn_train.py` and `reddit_jokes_seq_cnn_test.py` to train and infer respectively using the intended model.
 
-Some of the Sequence CNN Attention Model outputs are provided below:
+Some of the Sequence CNN Attention Model outputs for the Reddit joke dataset are provided below:
 ```
 Input Phrase:
 bad_joke
@@ -79,6 +79,45 @@ Input Phrase:
 good_joke
 Generated Phrase:
 good_joke what kind of pants does mario wear ? denim denim denim EOS
+```
+
+For the movie dialogue dataset, run the following scripts in order:
+```
+python process_movie_dialogue.py
+python dialogue_seq_cnn_train.py
+```
+to train the model. Run
+```
+python dialogue_seq_cnn_test.py
+```
+to perform inference. 
+
+Some of sample outputs for the Sequence CNN Attention Model for the movie dialogue dataset are provided below:
+```
+Input Phrase:
+hi
+Generated Response:
+hi EOS PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD
+
+Input Phrase:
+how much does it cost
+Generated Response:
+two thousand francs EOS PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD
+
+Input Phrase:
+where did he come from
+Generated Response:
+i don t know he just appeared as magic EOS PAD PAD PAD PAD PAD
+
+Input Phrase:
+who is it
+Generated Response:
+it s me EOS PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD PAD
+
+Input Phrase:
+what time is it
+Generated Response:
+eight o clock you got to go EOS PAD PAD PAD PAD PAD PAD PAD PAD
 ```
 
 ## Extension to Sequence-to-Sequence Models
@@ -100,9 +139,18 @@ to train the model. To perform inference, run
 ```
 python dialogue_seq2seq_cnn_test.py
 ```
-with the input phrase of your choice. In the scripts, a convolutional width (`kernel_size`) of 5 is set.
+with the input phrase of your choice. In the scripts, a convolutional width (`kernel_size`) of 5 is set. For subword tokens, run
+```
+python process_movie_dialogue_subwords.py
+python dialogue_subword_seq2seq_cnn_train.py
+```
+to train the model, and
+```
+python dialogue_subword_seq2seq_cnn_test.py
+```
+to perform inference.
 
-Some of the Sequence-to-Sequence CNN Model is provided below:
+The Sequence-to-Sequence CNN model is trained for 20000 iterations using the same hardware (Nvidia P1000 4GB Graphics Card). Some of the outputs using word tokens is provided below:
 ```
 Input Phrase:
 good morning
@@ -128,4 +176,31 @@ Input Phrase:
 how are you
 Generated Phrase:
 i m fine EOS
+```
+
+For the subword tokens, the The Sequence-to-Sequence CNN model is trained for 50000 iterations. Some of the sample outputs of the model is provided below (additional `PAD` tokens after `EOS` are removed):
+```
+Input Phrase:
+where are you going ?
+Generated Phrase:
+SOS i ' m a little nervous , so ... EOS
+
+Input Phrase:
+how are you ?
+Generated Phrase:
+SOS fine . EOS
+
+how much ?
+Generated Phrase:
+SOS $ 50 ? EOS
+
+Input Phrase:
+what time is it ?
+Generated Phrase:
+SOS eight o ' clock . EOS
+
+Input Phrase:
+when are we leaving ?
+Generated Phrase:
+SOS tomorrow morning , before the store opening . EOS
 ```
