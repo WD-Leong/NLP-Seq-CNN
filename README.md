@@ -22,7 +22,7 @@ Instead of using temperature, `tf.random.categorical` function is applied on the
 ## Dilated Convolutional Networks
 The dilated convolutional neural network applied in the [WaveNet](https://arxiv.org/pdf/1609.03499.pdf) paper allows it to cover thousands of timesteps, making it suitable to generate synthetic utterances. Unlike the [Convolutional Sequence to Sequence Learning](https://arxiv.org/pdf/1705.03122.pdf) paper, no position embedding is applied in this implementation.
 
-![WaveNet's Dilated 1D Convolutional Network](Dilated_Convolution.JPG)
+![WaveNet's Dilated 1D Convolutional Network](Dilated_Convolution.jpg)
 
 Fig 1: WaveNet's Dilated Convolutional Network (source: [WaveNet](https://arxiv.org/pdf/1609.03499.pdf))
 
@@ -50,7 +50,7 @@ Overall, it was observed that the Sequence-CNN model is able to model much longe
 
 An extention to the Sequence CNN model is explored to incorporate attention. In this case, it is first observed that the different layers correspond to sequence outputs whose receptive fields are of different lengths. Hence, inspired by the [Compressive Transformer](https://arxiv.org/abs/1911.05507), the attention mechanism is done across the outputs of the different stacks/layers, allowing the model to combine outputs across different receptive fields. As the total number of stacks/layers is generally much lower than the sequence length, this operation is gentler on the hardware memory while maintaining an acceptable degree of performance.
 
-![Dilated CNN Models with Attention](Dilated_Convolution_Attention.JPG)
+![Dilated CNN Models with Attention](Dilated_Convolution_Attention.jpg)
 Fig. 2: Model Architecture of Dilated CNN Model with Attention Mechanism (Diagram modified from that in [WaveNet](https://arxiv.org/pdf/1609.03499.pdf) paper)
 
 The Sequence CNN module is provided in the `tf_ver2_seq_cnn_attn.py` module. As the model parameters of Sequence CNN and Sequence CNN Attention are similar, changing the import module 
@@ -123,7 +123,7 @@ eight o clock you got to go EOS PAD PAD PAD PAD PAD PAD PAD PAD
 ## Extension to Sequence-to-Sequence Models
 Inspired by [Convolutional Sequence to Sequence Learning](https://arxiv.org/pdf/1705.03122.pdf) paper, a much simplified Sequence-to-Sequence CNN model using dilated causal convolution is developed here. Unlike Transformers, the attention mechanism is only applied once at the final layer of the Encoder and Decoder outputs. It is conceptually simple and bears some resemblance to RNN/LSTM networks. Similar to the implementation of sequence dilated causal convolutional neural networks, no positional embedding is applied in this implementation.
 
-![Sequence-to-Sequence Dilated Convolutional Architecture](Seq2Seq_CNN_Architecture.JPG)
+![Sequence-to-Sequence Dilated Convolutional Architecture](Seq2Seq_CNN_Architecture.jpg)
 
 Fig. 3: Sequence-to-Sequence Architecture using Dilated Convolutional Network (Diagram modified from [WaveNet](https://arxiv.org/pdf/1609.03499.pdf) paper)
 
