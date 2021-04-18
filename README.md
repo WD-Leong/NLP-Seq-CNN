@@ -204,3 +204,17 @@ when are we leaving ?
 Generated Phrase:
 SOS tomorrow morning , before the store opening . EOS
 ```
+
+## API Call
+The code `main.py` allows the trained model to be deployed and called via FastAPI. Run
+```
+uvicorn main:app --reload
+```
+and call the API via
+```
+http://127.0.0.1:8000/bot_response/?phrase="who are you?"
+```
+to get the bot's response to `who are you?`. In this case, the API returns
+```
+{"bot_reply":"SOS i ' m the bowler . EOS PAD"}
+```
