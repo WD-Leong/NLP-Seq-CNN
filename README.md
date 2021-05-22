@@ -223,6 +223,7 @@ to get the bot's response to `who are you?`. In this case, the API returns
 Some of the existing trained models can be downloaded via:
 
 | Model Name | Link |
+| ---------- | ---- |
 | PyTorch Seq-CNN | https://github.com/WD-Leong/NLP-Seq-CNN/releases/download/v0.9/dialogue_seq_cnn_torch|
 | TFv2 Seq-CNN | https://github.com/WD-Leong/NLP-Seq-CNN/releases/download/v0.9/dialogue_subword_seq_cnn_keras.zip |
 | PyTorch Seq2Seq-CNN | https://github.com/WD-Leong/NLP-Seq-CNN/releases/download/v0.9/dialogue_seq2seq_cnn_torch |
@@ -231,6 +232,7 @@ Some of the existing trained models can be downloaded via:
 The processed data files can be downloaded via:
 
 | Data | Link |
+| ---- | ---- |
 | Movie Dialogue Word Tokens | https://github.com/WD-Leong/NLP-Seq-CNN/releases/download/v0.9/movie_dialogues.pkl |
 | Movie Dialogue Sub-Word Tokens | https://github.com/WD-Leong/NLP-Seq-CNN/releases/download/v0.9/movie_dialogues_subword.pkl |
 
