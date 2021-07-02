@@ -219,6 +219,27 @@ to get the bot's response to `who are you?`. In this case, the API returns
 {"bot_reply":"SOS i ' m the bowler . EOS PAD"}
 ```
 
+## PyTorch Support
+The Seq-CNN model can be trained using PyTorch as well. Run
+```
+python process_movie_dialogue.py
+python dialogue_seq_cnn_torch.py
+```
+to clean and format the data, followed by training the model, and
+```
+python dialogue_seq_cnn_torch_test.py
+```
+to perform inference. For the Seq2Seq-CNN model, run
+```
+python process_movie_dialogue.py
+python dialogue_seq2seq_cnn_torch.py
+```
+to clean and format the data, followed by training the model, and
+```
+python dialogue_seq2seq_cnn_torch_test.py
+```
+to perform inference.
+
 ## Trained Models
 Some of the existing trained models can be downloaded via:
 
